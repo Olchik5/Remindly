@@ -17,7 +17,7 @@ public class TestsBase {
     }
 
     @AfterMethod(enabled = false)
-    public void tiarDown() {
+    public void tearDown() {
         app.stop();
     }
 

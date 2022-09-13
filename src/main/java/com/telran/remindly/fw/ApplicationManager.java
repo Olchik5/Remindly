@@ -14,6 +14,7 @@ public class ApplicationManager   {
     DesiredCapabilities capabilities;
 
     MainScreenHelper mainScreen;
+    RemindersHelper reminders;
 
 
     public AppiumDriver getDriver() {
@@ -22,6 +23,10 @@ public class ApplicationManager   {
 
     public MainScreenHelper getMainScreen() {
         return mainScreen;
+    }
+
+    public RemindersHelper getReminders() {
+        return reminders;
     }
 
     public   void init() throws MalformedURLException {
@@ -37,6 +42,8 @@ public class ApplicationManager   {
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
         mainScreen = new MainScreenHelper(driver);
+        reminders = new RemindersHelper(driver);
+
     }
 
     public void stop() {
